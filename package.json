@@ -1,6 +1,6 @@
 {
   "name": "reactive-state",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> a atom state manager lib base on @vue/reactivity",
   "author": "jeiizou <jeiizou@qq.com>",
   "main": "lib/index.js",
@@ -14,7 +14,8 @@
     "start": "vite --config ./example/vite.config.ts"
   },
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "directories": {
     "lib": "lib",
@@ -44,6 +45,7 @@
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^3.0.1",
+    "rollup-plugin-terser": "^7.0.2",
     "ts-jest": "^26.5.5",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",

@@ -1,4 +1,4 @@
-import { UnwrapRef } from 'vue';
+import { UnwrapRef } from '@vue/reactivity';
 import { uuid } from './util';
 
 export default class BroadcastEvent<T> {

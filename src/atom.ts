@@ -1,4 +1,4 @@
-import { readonly, Ref, ref, UnwrapRef } from '@vue/reactivity';
+import { DeepReadonly, readonly, Ref, ref, UnwrapRef } from '@vue/reactivity';
 import { deepAssign } from './util';
 import BroadcastEvent from './broadcast';
 
@@ -24,7 +24,7 @@ export class Atom<T> {
     }
 
     // read state
-    state() {
+    state(): DeepReadonly<Ref<UnwrapRef<T>>> {
         return readonly(this.instanceRef);
     }
 

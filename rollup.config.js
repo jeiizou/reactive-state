@@ -7,11 +7,12 @@ import cleanup from 'rollup-plugin-cleanup';
 import pluginDelete from 'rollup-plugin-delete';
 import path from 'path';
 import pkg from './package.json';
+import { terser } from 'rollup-plugin-terser';
 // import copy from 'rollup-plugin-copy';
 
 const extensions = ['.js', '.ts', '.tsx'];
 
-const resolve = function (...args) {
+const resolve = function(...args) {
     return path.resolve(__dirname, ...args);
 };
 
@@ -32,18 +33,18 @@ export default [
             json(),
             nodeResolve({
                 extensions,
-                // modulesOnly: true,
-                // resolveOnly: ['./src/**'],
+                modulesOnly: true,
+                resolveOnly: ['./src/**'],
             }),
             babel({
                 exclude: 'node_modules/**', // 只编译我们的源代码
                 extensions,
                 babelHelpers: 'runtime',
-                // presets: ['@babel/preset-env', '@babel/preset-typescript'],
-                // plugins: [
-                //     '@babel/plugin-transform-runtime',
-                //     '@babel/plugin-proposal-class-properties',
-                // ],
+                presets: ['@babel/preset-env', '@babel/preset-typescript'],
+                plugins: [
+                    '@babel/plugin-transform-runtime',
+                    '@babel/plugin-proposal-class-properties',
+                ],
             }),
             replace({
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
@@ -51,6 +52,7 @@ export default [
             }),
             cleanup(),
             pluginDelete({ targets: 'lib/*' }),
+            terser(),
         ],
     },
     {
