@@ -1,5 +1,5 @@
 {
-  "name": "reactive-state",
+  "name": "@chaos-kit/reactive-state",
   "version": "0.0.1",
   "description": "> a atom state manager lib base on @vue/reactivity",
   "author": "jeiizou <jeiizou@qq.com>",
