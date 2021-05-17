@@ -27,6 +27,9 @@ export default class BroadcastEvent<T> {
     }
 
     off(fn: (value: UnwrapRef<T>) => void) {
-        this.onEvents.splice(this.onEvents.indexOf(fn), 1);
+        let index = this.onEvents.indexOf(fn);
+        if (index !== -1) {
+            this.onEvents.splice(this.onEvents.indexOf(fn), 1);
+        }
     }
 }

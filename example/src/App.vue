@@ -1,5 +1,6 @@
 <template>
     <div>{{ count }}</div>
+    <div>{{ doubleCount }}</div>
     <add></add>
     <decide></decide>
 </template>
@@ -7,6 +8,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { count } from "./state/count";
+import { doubleCount } from "./state/doubleCount";
 import add from "./components/add.vue";
 import decide from "./components/decide.vue";
 
@@ -18,6 +20,7 @@ export default defineComponent({
     setup() {
         return {
             count,
+            doubleCount,
         };
     },
 });

@@ -44,3 +44,13 @@ export default defineComponent({
 });
 </script>
 ```
+
+> tips: should get the value by read the `value` property, ex: `state.value`. and the state is readonly.
+
+## Dervice
+
+
+## Task
+
+
+## SyncAtom
